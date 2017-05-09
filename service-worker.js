@@ -1,5 +1,5 @@
 // tick this to make the cache invalidate and update
-const CACHE_VERSION = '0.0.13';
+const CACHE_VERSION = '0.0.14';
 const CURRENT_CACHES = {
   'read-through': 'read-through-cache-v' + CACHE_VERSION
 };
@@ -30,7 +30,7 @@ self.addEventListener('activate', (event) => {
         })
       );
     }).then(function () {
-      console.log('[ServiceWorker] Claiming clients for version', version);
+      console.log('[ServiceWorker] Claiming clients for version', CACHE_VERSION);
       return self.clients.claim();
     })
   );
